@@ -9,6 +9,16 @@ manufacturer varchar (45) not null,
 product_count int UNSIGNED ,
 price int UNSIGNED );
 
+/* Для PostgreSQL
+CREATE TABLE mobile_phones (
+    id SERIAL PRIMARY KEY,
+    product_name VARCHAR(45) NOT NULL,
+    manufacturer VARCHAR(45) NOT NULL,
+    product_count INT CHECK (product_count >= 0),
+    price INT CHECK (price >= 0)
+);
+*/
+
 insert into mobile_phones (product_name, manufacturer, product_count, price)
 values
 ('iPhone X', 'Apple', 156, 76000),
